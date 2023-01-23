@@ -11,10 +11,8 @@
         When the agent reaches a target/goal, the next node in the list of goals is set as the goal for the agent to move towards.<br>
         I had trouble making the agent acceleration not stop and start at each node.<br>
         I attempted to smooth the transitions between nodes by modifying the goal force attracting the agent.</p>
-        <video width="320" height="240" controls>
-          <source src="videos/decent2Trim.mp4" type="video/mp4">
-        </video>
-        <a href="https://github.umn.edu/OWENS518/proj1-owens518.github.io/tree/main/Proj1_Test">Get Files</a>
+   
+
         
         <h1>3D Simulation of A* Pathfinding in Unity</h1>
         <p>The following features were implemented</p>
@@ -22,7 +20,7 @@
         <p>The lighting is cast at an angle to simulate natural lighting and shadows.<br>
            There are 4 cameras, they are mapped to the numbers 1-4. 2 cameras show different angles of the map. 2 cameras follow a tank at different angles.
         </p>
-        <img src="videos/move.png" alt="tank">
+ 
         <h2>Improved Agent & Scene Rendering</h2>
         <p>There are three agents, 2 of them are 3D low-poly tanks and the other is a capsule.<br>
             The obstacles are 3D low-poly rocks and buildings. I did not make these assets, they are from the Unity asset store.<br>
@@ -30,31 +28,25 @@
             The obstacle avoidance was implemented by creating an unwalkable layer-mask and applying it to the grid coordinates of where the obstacles are located.<br>
             I then used Unity's built in Physics library to call the CheckSphere function which will check if a node is walkable, given an unwalkable layer-mask.
         </p>
-        <img src="videos/scene.png" alt="scene">
+ 
         <h2>Incorporate Particle Systems</h2>
         <p>I tried to implement particles in Unity from scratch. It was difficult and I was only getting particles with missing textures.<br>
             I instead used the built in particle system to spawn particles in the smokestack.
         </p>
-        <video width="320" height="240" controls>
-            <source src="videos/smokestack_Trim.mp4" type="video/mp4">
-        </video>
+
         <h2> Orientation Smoothing</h2>
         <p>To orientate the tanks towards their goals, the angle of rotation was calculated using the arctangent.<br>
             To smooth the orientation so that it didn't immediately snap to the new direction, I used the function SmoothDampAngle<br>
             with Euler's function to calculate the angles of rotation needed.
         </p>
-        <video width="320" height="240" controls>
-            <source src="videos/3DAStar_Unity_Trim.mp4" type="video/mp4">
-        </video>
+      
         <h2>Multiple Agents Planning</h2>
         <p>To process multiple agents moving simultaneously, a movement handler was created to process each path created.<br>
             I ran into major issues with the game stalling for a second or two as it tried to calculate the paths.<br>
             To fix this issue a handler was implemented to to process each path at seperate frames, not all at once on the same frame.<br>
             I then have another class to handle the tank's movement.
         </p>
-        <video width="320" height="240" controls>
-            <source src="videos/3DAStar_Unity_Trim.mp4" type="video/mp4">
-        </video>
+      
         <div>
             <a href="https://github.umn.edu/OWENS518/proj1-owens518.github.io/tree/main/scripts">Get Code</a>
         </div>
